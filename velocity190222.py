@@ -33,7 +33,7 @@ def v_profile(a,t_station, s_avg, tstep, d_split):
     while d_inst.sum() <= 0.5*d_split:
         if v[i]< s_avg: #acceleration
             v[i+1]= v[i] + a[i]*tstep
-            d_inst[i]= a[i]*(tstep**2)
+            d_inst[i]= v[i]*tstep
             
         elif v[i]>= s_avg: #constant speed
             a[i]=0
